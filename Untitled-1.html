@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京自駕旅遊小工具</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>🇯🇵 東京-富士山自駕行</h1>
+    </header>
+
+    <main class="itinerary-container">
+        <section class="day-card">
+            <div class="weather-info">
+                ☀️ 12/29 新宿・澀谷 | 天氣：多雲時晴，12°C
+            </div>
+            <h2>🗓️ 12/29 新宿、澀谷、東京鐵塔</h2>
+            <button class="nav-button" data-location="澀谷 Shibuya Sky">導航到 澀谷 Sky</button>
+        </section>
+        
+        </main>
+
+    <footer class="tab-bar">
+        <a href="#itinerary" class="active">行程</a>
+        <a href="#info">資訊</a>
+        <a href="#budget">記帳</a>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // 註冊 Service Worker 實現 PWA 功能
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker 註冊成功:', reg.scope))
+            .catch(err => console.error('Service Worker 註冊失敗:', err));
+        }
+    </script>
+</body>
+</html>

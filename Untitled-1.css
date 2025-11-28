@@ -1,0 +1,74 @@
+/* 基礎重設 */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f7f7f5; /* 柔和的米白色背景 */
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 60px; /* 為底部導覽列保留空間 */
+}
+
+/* App Header 頂部 */
+.app-header {
+    background-color: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* 行程卡片 */
+.day-card {
+    background-color: #ffffff;
+    border-radius: 12px; /* 圓角設計 */
+    margin: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 柔和陰影 */
+}
+
+.weather-info {
+    font-size: 0.9em;
+    color: #e95464; /* 亮顯色，如日式朱紅 */
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 導航按鈕 */
+.nav-button {
+    background-color: #4CAF50; /* 綠色，代表導航/行動 */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block; /* 讓按鈕佔滿寬度 */
+    width: 100%;
+}
+
+/* 底部 Tab Bar (手機優先) */
+.tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+.tab-bar a {
+    color: #999;
+    text-decoration: none;
+    padding: 5px 15px;
+}
+.tab-bar a.active {
+    color: #007bff; /* 藍色亮顯當前頁面 */
+    font-weight: bold;
+}
