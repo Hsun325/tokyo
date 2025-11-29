@@ -1,7 +1,7 @@
 /* 設置 CSS 變數，方便統一主題色 */
 :root {
-    --primary-color: #D9D8D7; /* 常用於按鈕和高亮  */
-    --background-light: #F2F1F0; /* 極淺灰色背景 */
+    --primary-color: #a88d71; /* 常用於按鈕和高亮  */
+    --background-light: #CACFE4; /* 極淺灰色背景 */
     --card-background: #ffffff; /* 卡片白色背景 */
     --text-primary: #111111; /* 主要深色文字 */
     --text-secondary: #555555; /* 次要淺色文字 */
@@ -237,5 +237,4 @@ body {
     width: 100%;
     font-weight: bold;
 }
-
 
