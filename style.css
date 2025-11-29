@@ -1,11 +1,17 @@
 /* 設置 CSS 變數，方便統一主題色 */
 :root {
-    --primary-color: #0099FF; /* 常用於按鈕和高亮 */
+    --primary-color: #0099FF; /* 常用於按鈕和高亮 (藍色) */
     --background-light: #f5f5f5; /* 極淺灰色背景 */
     --card-background: #ffffff; /* 卡片白色背景 */
     --text-primary: #111111; /* 主要深色文字 */
     --text-secondary: #555555; /* 次要淺色文字 */
     --border-radius-lg: 16px; /* 大圓角 */
+
+    /* 記帳分類顏色 */
+    --color-food: #FF7043;    /* 餐飲: 橘色 */
+    --color-traffic: #42A5F5; /* 交通: 藍色 */
+    --color-shopping: #8D6E63;/* 購物: 棕色 */
+    --color-other: #7E57C2;   /* 其他: 紫色 */
 }
 
 /* 基礎重設 (使用系統字體以模擬 App 感) */
@@ -16,13 +22,13 @@ body {
     background-color: var(--background-light); /* 極淺灰色背景 */
     color: var(--text-primary);
     line-height: 1.5;
-    padding-bottom: 80px; /* 為底部導覽列保留空間 */
+    padding-bottom: 70px; /* 為底部導覽列保留空間 */
 }
 
 /* App Header 頂部 (固定於頂部) */
 .app-header {
     background-color: var(--card-background);
-    padding: 20px 20px;
+    padding: 20px 20px 15px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* 輕柔的下陰影 */
     text-align: left;
     position: sticky;
@@ -35,6 +41,12 @@ body {
     margin: 0;
 }
 
+/* 主內容容器 */
+.content-container {
+    /* 確保所有分頁都佔滿寬度 */
+    width: 100%; 
+}
+
 /* 行程內容容器 */
 .itinerary-container {
     padding: 10px;
@@ -43,7 +55,7 @@ body {
     gap: 10px; /* 卡片間距 */
 }
 
-/* 行程卡片 (Threads 風格的核心) */
+/* 行程卡片與工具區塊 (Threads 風格的核心) */
 .day-card, .tool-section {
     background-color: var(--card-background);
     border-radius: var(--border-radius-lg); /* 重要的圓角 */
@@ -60,13 +72,21 @@ body {
     color: var(--primary-color); /* 行程日期使用主題色 */
 }
 
-/* 天氣資訊 */
+/* 天氣/提醒資訊 */
 .weather-info {
     font-size: 0.9em;
     color: var(--text-secondary);
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eeeeee;
+}
+.day-card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.day-card strong {
+    font-weight: 700;
 }
 
 /* 導航按鈕 */
@@ -101,6 +121,7 @@ body {
     background-color: var(--card-background);
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    z-index: 100;
 }
 .tab-bar a {
     color: var(--text-secondary);
@@ -108,34 +129,47 @@ body {
     padding: 10px 15px;
     font-weight: 600;
     transition: color 0.2s;
+    font-size: 0.9em;
 }
 .tab-bar a.active {
     color: var(--primary-color); /* 藍色亮顯當前頁面 */
-    border-bottom: 3px solid var(--primary-color); /* 底部加上藍色底線 */
-    padding-bottom: 7px;
+    /* 移除底部藍線，讓風格更像 Threads/Instagram Tab Bar */
+}
+
+/* 隱藏未選中的內容分頁 */
+.hidden {
+    display: none !important;
 }
 
 /* 記帳功能樣式 */
-.tool-section {
-    margin-top: 20px;
-}
 .input-form {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
     flex-wrap: wrap; /* 在小螢幕上可以換行 */
 }
-.input-form input, .input-form select, .input-form button {
-    padding: 10px;
+.input-form input, .input-form select {
+    padding: 12px;
     border-radius: 8px;
     border: 1px solid #ddd;
     flex-grow: 1;
+    font-size: 1em;
 }
+#expense-item {
+    flex-basis: 100%; /* 項目名稱佔滿一行 */
+}
+#expense-amount, #expense-category {
+    flex-basis: calc(50% - 5px); /* 金額和分類各佔一半 */
+}
+
 #add-expense-btn {
     background-color: #4CAF50;
     color: white;
     font-weight: bold;
     border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
 }
 #expense-list {
     list-style: none;
@@ -145,12 +179,39 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px dashed #eee;
-    color: var(--text-primary);
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1em;
 }
+#expense-list li span:first-child {
+    font-weight: 500;
+}
+#expense-list li span:nth-child(2) {
+    font-weight: 700;
+}
+#expense-list li small {
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: white;
+}
+
+/* 記帳清單分類顏色 */
+#expense-list li.category-food small {
+    background-color: var(--color-food);
+}
+#expense-list li.category-traffic small {
+    background-color: var(--color-traffic);
+}
+#expense-list li.category-shopping small {
+    background-color: var(--color-shopping);
+}
+#expense-list li.category-other small {
+    background-color: var(--color-other);
+}
+
 #expense-list li button {
-    background: #ff5c5c;
+    background: #FF5C5C;
     color: white;
     border: none;
     border-radius: 6px;
@@ -163,7 +224,8 @@ body {
     background: #555555;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     width: 100%;
+    font-weight: bold;
 }
