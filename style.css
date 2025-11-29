@@ -1,6 +1,6 @@
 /* 設置 CSS 變數，方便統一主題色 */
 :root {
-    --primary-color: #a88d71; /* 常用於按鈕和高亮  */
+    --primary-color: #a88d71; /* 常用於按鈕和高亮 */
     --background-light: #CACFE4; /* 極淺灰色背景 */
     --card-background: #ffffff; /* 卡片白色背景 */
     --text-primary: #111111; /* 主要深色文字 */
@@ -14,30 +14,28 @@
     --color-other: #7E57C2;   /* 其他: 紫色 */
 }
 
-/* 請在您的 style.css 中找到 body 區塊 */
+/* 基礎重設 */
 body {
     margin: 0;
-    /* === 將這裡替換為您想要的字體清單 === */
     font-family: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif; 
-    /* ================================== */
     background-color: var(--background-light); 
     color: var(--text-primary);
     line-height: 1.5;
-    padding-bottom: 70px;
+    padding-bottom: 70px; /* 為底部導覽列保留空間 */
 }
 
-/* App Header 頂部 (固定於頂部) */
+/* App Header 頂部 - 實現置中和縮小 */
 .app-header {
     background-color: var(--card-background);
     padding: 20px 20px 15px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08); 
-    text-align: left;
+    text-align: center; /* <<< 已修改為置中 */
     position: sticky;
     top: 0;
     z-index: 10;
 }
 .app-header h1 {
-    font-size: 1.5em;
+    font-size: 1.2em; /* <<< 已修改為縮小字體 */
     font-weight: 700; 
     margin: 0;
 }
@@ -45,32 +43,25 @@ body {
 /* 主內容容器 */
 .content-container {
     width: 100%; 
-    /* 移除橫向滑動的相關樣式 */
 }
 
-/* === 行程垂直滾動樣式 (恢復) === */
-.itinerary-container {
-    padding: 10px; /* 恢復左右邊距 */
-    display: flex;
-    flex-direction: column; /* 垂直排列 */
-    gap: 10px; /* 卡片間距 */
+/* === 獨立行程頁面樣式 (取代舊的 .itinerary-container) === */
+.itinerary-day, .tool-section {
+    padding: 10px; /* 內邊距 */
+    box-sizing: border-box;
 }
-/* 移除 .scroll-wrapper 和 .horizontal-cards 的相關樣式 */
 
 
-/* 行程卡片與工具區塊 (Threads 風格的核心) */
+/* 行程卡片與工具區塊 (保持核心風格) */
 .day-card, .tool-section {
     background-color: var(--card-background);
     border-radius: var(--border-radius-lg); 
-    margin: 10px; /* 恢復上下邊距 */
+    margin: 10px auto; /* 置中卡片 */
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
-    
-    /* 移除橫向滑動的強制寬度 */
     width: auto; 
-    flex-shrink: initial; 
+    max-width: 600px; /* 限制卡片最大寬度 */
 }
-/* 移除所有 .horizontal-cards, .scroll-wrapper 相關的額外樣式 */
 
 
 .day-card h2 {
@@ -117,28 +108,34 @@ body {
     background-color: #007bb5;
 }
 
-/* 底部 Tab Bar (手機 App 底部導覽列) */
+/* 底部 Tab Bar (動態日期 + 資訊/記帳) */
 .tab-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start; /* <<< 調整為靠左，讓多個 Tab 可以滾動 */
     align-items: center;
     height: 70px;
     background-color: var(--card-background);
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     z-index: 100;
+    overflow-x: scroll; /* <<< 允許橫向滾動 */
+    padding: 0 5px;
+    -webkit-overflow-scrolling: touch; /* 改善 iOS 上的滾動體驗 */
 }
 .tab-bar a {
     color: var(--text-secondary);
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 8px; /* <<< 縮小左右 padding 以容納更多 Tab */
     font-weight: 600;
     transition: color 0.2s;
-    font-size: 0.9em;
+    font-size: 0.75em; /* <<< 縮小字體以容納更多 Tab */
+    min-width: 55px; /* 確保每個 Tab 都有最小寬度 */
+    text-align: center;
+    flex-shrink: 0; /* 阻止 Tab 被擠壓 */
 }
 .tab-bar a.active {
     color: var(--primary-color);
@@ -237,4 +234,3 @@ body {
     width: 100%;
     font-weight: bold;
 }
-
