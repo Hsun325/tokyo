@@ -43,57 +43,33 @@ body {
 
 /* 主內容容器 */
 .content-container {
+    /* 確保所有分頁都佔滿寬度 */
     width: 100%; 
 }
 
-/* 2. 行程卡片容器：強制所有卡片並排 */
-.itinerary-container.horizontal-cards {
+/* 行程內容容器 */
+.itinerary-container {
+    padding: 10px;
     display: flex;
-    flex-direction: row; /* 橫向排列 */
-    padding: 0;
+    flex-direction: column;
+    gap: 10px; /* 卡片間距 */
 }
 
-/* 3. 單個行程卡片：強制卡片佔滿螢幕寬度，不允許收縮 */
-.day-card {
-    /* 卡片寬度計算：100vw - 左右兩側的 margin 20px = 40px */
-    width: calc(100vw - 40px); 
-    flex-shrink: 0; /* 不允許卡片收縮 */
-    
-    /* 樣式保持不變 */
+/* 行程卡片與工具區塊 (Threads 風格的核心) */
+.day-card, .tool-section {
     background-color: var(--card-background);
-    border-radius: var(--border-radius-lg); 
+    border-radius: var(--border-radius-lg); /* 重要的圓角 */
+    margin: 10px; /* 與容器的邊距 */
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
-    
-    /* 調整邊距：垂直 0，水平 10px */
-    margin: 0 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* 輕柔的陰影，增加漂浮感 */
 }
-/* 讓第一張卡片左邊有間距，形成視覺上的置中效果 */
-.itinerary-container.horizontal-cards .day-card:first-child {
-    margin-left: 20px; 
-}
-/* 讓最後一張卡片右邊有間距，方便滑動 */
-.itinerary-container.horizontal-cards .day-card:last-child {
-    margin-right: 20px; 
-}
-
-/* 工具區塊 (Info, Budget) 保持垂直滾動的樣式 */
-.tool-section {
-    background-color: var(--card-background);
-    border-radius: var(--border-radius-lg); 
-    margin: 10px; /* 垂直邊距保留 */
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
-}
-
-/* --- 以下是卡片內部和按鈕樣式，保持不變 --- */
 
 .day-card h2 {
     font-size: 1.2em;
-    font-weight: 600; 
+    font-weight: 600; /* 次要標題使用中等粗細 */
     margin-top: 0;
     margin-bottom: 15px;
-    color: var(--primary-color);
+    color: var(--primary-color); /* 行程日期使用主題色 */
 }
 
 /* 天氣/提醒資訊 */
@@ -118,7 +94,7 @@ body {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 12px; /* 按鈕圓角 */
     padding: 12px 15px;
     margin-top: 15px;
     cursor: pointer;
@@ -129,7 +105,7 @@ body {
 }
 
 .nav-button:active {
-    background-color: #007bb5;
+    background-color: #007bb5; /* 按下時顏色變深 */
 }
 
 /* 底部 Tab Bar (手機 App 底部導覽列) */
@@ -141,7 +117,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 70px;
+    height: 70px; /* 增加高度以模擬 App 底部欄 */
     background-color: var(--card-background);
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
@@ -156,7 +132,8 @@ body {
     font-size: 0.9em;
 }
 .tab-bar a.active {
-    color: var(--primary-color);
+    color: var(--primary-color); /* 藍色亮顯當前頁面 */
+    /* 移除底部藍線，讓風格更像 Threads/Instagram Tab Bar */
 }
 
 /* 隱藏未選中的內容分頁 */
@@ -164,12 +141,12 @@ body {
     display: none !important;
 }
 
-/* --- 記帳功能樣式，保持不變 --- */
+/* 記帳功能樣式 */
 .input-form {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap; /* 在小螢幕上可以換行 */
 }
 .input-form input, .input-form select {
     padding: 12px;
@@ -179,10 +156,10 @@ body {
     font-size: 1em;
 }
 #expense-item {
-    flex-basis: 100%;
+    flex-basis: 100%; /* 項目名稱佔滿一行 */
 }
 #expense-amount, #expense-category {
-    flex-basis: calc(50% - 5px);
+    flex-basis: calc(50% - 5px); /* 金額和分類各佔一半 */
 }
 
 #add-expense-btn {
@@ -252,4 +229,3 @@ body {
     width: 100%;
     font-weight: bold;
 }
-
