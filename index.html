@@ -15,9 +15,7 @@
 
     <main class="content-container">
             
-        <section id="itinerary" class="itinerary-container active-tab">            
-          
-            
+        <section id="day-12-27" class="itinerary-day active-tab">
             <div class="day-card" data-date="12/27">
                 <div class="weather-info">
                     ☁️ 12/27 淺草 | 天氣：多雲，14°C
@@ -34,7 +32,9 @@
                 </ul>
                 
             </div>
+        </section>
 
+        <section id="day-12-28" class="itinerary-day hidden">
             <div class="day-card" data-date="12/28">
                 <div class="weather-info">
                     🎢 12/28 disney-Sea | 天氣：晴朗，13°C
@@ -46,7 +46,9 @@
                 <p>淺草 (人形町站) → 日比谷線 (八丁堀站) → JR京葉線 → 舞濱站。</p>
                                 
             </div>
+        </section>
 
+        <section id="day-12-29" class="itinerary-day hidden">
             <div class="day-card" data-date="12/29">
                 <div class="weather-info">
                     ☀️ 12/29 新宿・澀谷 | 天氣：多雲時晴，12°C
@@ -62,7 +64,9 @@
                 </ul>
                 
             </div>
+        </section>
 
+        <section id="day-12-30" class="itinerary-day hidden">
             <div class="day-card" data-date="12/30">
                 <div class="weather-info">
                     🐱 12/30 豪德寺 | 天氣：晴朗，13°C
@@ -76,7 +80,9 @@
                 <p>看要吃啥</p>
                 
             </div>
+        </section>
 
+        <section id="day-12-31" class="itinerary-day hidden">
             <div class="day-card" data-date="12/31">
                 <div class="weather-info">
                     🗻 12/31 富士山 | 天氣：多雲，5°C
@@ -92,7 +98,9 @@
                 </ul>
                 <button class="nav-button" data-location="Hotel Clad">導航到 Hotel Clad </button>
             </div>
+        </section>
 
+        <section id="day-1-1" class="itinerary-day hidden">
             <div class="day-card" data-date="1/1">
                 <div class="weather-info">
                     ☀️ 1/1 御殿場市 | 天氣：晴朗，5°C
@@ -106,7 +114,9 @@
                 <p>自駕從御殿場回上野約 1.5 - 2 小時</p>
                 <button class="nav-button" data-location="御殿場 Premium Outlet">導航到 Hotel Apreton</button>
             </div>
+        </section>
 
+        <section id="day-1-2" class="itinerary-day hidden">
             <div class="day-card" data-date="1/2">
                 <div class="weather-info">
                     🌊 1/2 鎌倉市 | 天氣：多雲轉晴，10°C
@@ -120,9 +130,11 @@
                     <li>小町通</li>
                     <li>江之電</li>
                 </ul>
-               
+            
             </div>
+        </section>
 
+        <section id="day-1-3" class="itinerary-day hidden">
             <div class="day-card" data-date="1/3">
                 <div class="weather-info">
                     🐘 1/3 上野 | 天氣：晴朗，11°C
@@ -138,8 +150,10 @@
                 </ul>
 
             </div>
-            
-             <div class="day-card" data-date="1/4">
+        </section>
+
+        <section id="day-1-4" class="itinerary-day hidden">
+            <div class="day-card" data-date="1/4">
                 <div class="weather-info">
                     🐘 1/4 上野 | 天氣：晴朗，11°C
                 </div>
@@ -151,11 +165,10 @@
                     <li>機場周邊</li>                 
                 </ul>
             </div>
-                            
         </section>
 
-
         <section id="info" class="tool-section hidden">
+            <h2>✈️ 旅遊資訊與緊急聯絡</h2>
                         
             <div class="info-card day-card">
                 <h3>💰 旅遊費用總覽</h3>
@@ -207,30 +220,69 @@
     </main>
 
     <footer class="tab-bar">
-        <a href="#itinerary" id="tab-itinerary" class="active">行程</a>
-        <a href="#info" id="tab-info">資訊</a>
-        <a href="#budget" id="tab-budget">記帳</a>
     </footer>
 
     <script src="app.js"></script>
     <script>
-        // 註冊 Service Worker 實現 PWA 功能 (必須在根目錄)
+        // 註冊 Service Worker 實現 PWA 功能 
         if ('serviceWorker' in navigator) {
+            // 由於您有快取問題，這裡需要確保 service-worker.js 是最新的
             navigator.serviceWorker.register('/service-worker.js')
             .then(reg => console.log('Service Worker 註冊成功:', reg.scope))
             .catch(err => console.error('Service Worker 註冊失敗:', err));
         }
 
-        // --- Tab 頁面切換邏輯 (PWA 導航) ---
-        const tabs = document.querySelectorAll('.tab-bar a');
-        const sections = document.querySelectorAll('.content-container > section');
+        // --- Tab 頁面切換邏輯 (動態行程 Tab) ---
 
+        // 取得所有內容區塊 (所有帶有 id 的 section)
+        const contentSections = document.querySelectorAll('.content-container > section');
+        const tabBar = document.querySelector('.tab-bar');
+
+        // 1. 建立 Tab Bar (動態生成)
+        function buildTabBar() {
+            tabBar.innerHTML = '';
+            
+            // 遍歷所有 section 並為其創建 Tab
+            contentSections.forEach(section => {
+                const id = section.id; // e.g., 'day-12-27', 'info', 'budget'
+                let tabText = '';
+
+                // 判斷 Tab 顯示的文字
+                if (id.startsWith('day-')) {
+                    // 從 'day-12-27' 提取 '12/27'
+                    tabText = id.replace('day-', '').replace('-', '/');
+                } else if (id === 'info') {
+                    tabText = '資訊';
+                } else if (id === 'budget') {
+                    tabText = '記帳';
+                } else {
+                    return; // 忽略不處理的 section
+                }
+
+                const tabLink = document.createElement('a');
+                tabLink.href = `#${id}`;
+                tabLink.id = `tab-${id}`;
+                tabLink.textContent = tabText;
+                
+                // 綁定切換事件
+                tabLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // 點擊後更新 URL Hash，方便分享和瀏覽器回退
+                    window.location.hash = id; 
+                });
+
+                tabBar.appendChild(tabLink);
+            });
+        }
+
+        // 2. 切換 Tab 邏輯
         function switchTab(targetId) {
             // 隱藏所有內容區塊
-            sections.forEach(section => {
+            contentSections.forEach(section => {
                 section.classList.remove('active-tab');
                 section.classList.add('hidden');
             });
+            
             // 顯示目標區塊
             const targetSection = document.getElementById(targetId);
             if (targetSection) {
@@ -239,33 +291,45 @@
             }
             
             // 更新底部導覽列的 active 狀態
-            tabs.forEach(tab => {
+            tabBar.querySelectorAll('a').forEach(tab => {
                 tab.classList.remove('active');
             });
-            document.getElementById(`tab-${targetId}`).classList.add('active');
+            const activeTab = document.getElementById(`tab-${targetId}`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
         }
 
-        // 監聽 Tab Bar 點擊事件
-        tabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = tab.getAttribute('href').substring(1); // 取得 id (e.g., 'itinerary')
-                switchTab(targetId);
+        // 3. 頁面載入時執行
+        buildTabBar();
+        
+        // 初始化：檢查 URL Hash 或預設顯示第一個行程
+        const firstSectionId = contentSections[0].id; // 應該是 'day-12-27'
+        const initialHash = window.location.hash.substring(1);
+        
+        if (initialHash && document.getElementById(initialHash)) {
+            switchTab(initialHash);
+        } else {
+            // 預設顯示第一個行程 section
+            switchTab(firstSectionId);
+        }
+        
+        // 當頁面 hash 改變時 (e.g., 點擊 Tab 或使用瀏覽器回退)
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.substring(1) || firstSectionId;
+            switchTab(hash);
+        });
+
+        // 導航按鈕 (保持原有功能)
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const location = button.getAttribute('data-location');
+                if (location) {
+                    window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`, '_blank');
+                }
             });
         });
 
-        // 初始化顯示行程頁面
-        switchTab('itinerary');
-
-        // 當頁面 hash 改變時 (e.g., 分享連結帶有 #info)
-        window.addEventListener('hashchange', () => {
-            const hash = window.location.hash.substring(1) || 'itinerary';
-            switchTab(hash);
-        });
     </script>
 </body>
 </html>
-
-
-
-
