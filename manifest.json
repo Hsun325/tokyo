@@ -1,6 +1,6 @@
 {
     "name": "東京自駕旅遊小工具",
-    "short_name": "東京PWA",
+    "short_name": "tokyo",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -19,3 +19,4 @@
         }
     ]
 }
+
