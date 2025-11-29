@@ -14,14 +14,16 @@
     --color-other: #7E57C2;   /* 其他: 紫色 */
 }
 
-/* 基礎重設 (使用系統字體以模擬 App 感) */
+/* 請在您的 style.css 中找到 body 區塊 */
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* === 將這裡替換為您想要的字體清單 === */
+    font-family: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif; 
+    /* ================================== */
     background-color: var(--background-light); 
     color: var(--text-primary);
     line-height: 1.5;
-    padding-bottom: 70px; /* 為底部導覽列保留空間 */
+    padding-bottom: 70px;
 }
 
 /* App Header 頂部 (固定於頂部) */
@@ -235,3 +237,4 @@ body {
     width: 100%;
     font-weight: bold;
 }
+
