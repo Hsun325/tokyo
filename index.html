@@ -6,37 +6,254 @@
     <title>東京自駕旅遊小工具</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <header class="app-header">
-        <h1>🇯🇵 東京-富士山自駕行</h1>
+        <h1>🇯🇵 東京-富士山自駕行 🚗</h1>
     </header>
 
-    <main class="itinerary-container">
-        <section class="day-card">
-            <div class="weather-info">
-                ☀️ 12/29 新宿・澀谷 | 天氣：多雲時晴，12°C
+    <main class="content-container">
+
+        <section id="itinerary" class="itinerary-container active-tab">
+            
+            <div class="day-card" data-date="12/27">
+                <div class="weather-info">
+                    ☁️ 12/27 淺草・秋葉原 | 天氣：多雲，14°C
+                </div>
+                <h2>🗓️ 12/27 淺草、秋葉原、晴空塔</h2>
+                <p><strong>🚨 提醒:</strong> 10:30 到機場後直接出發，先入住淺草飯店。</p>
+                
+                <h3>📍 景點攻略：</h3>
+                <ul>
+                    <li>**淺草寺 / 仲見世商店街**: 必經之地，注意人形燒、仙貝等小吃。</li>
+                    <li>**合羽橋道具街**: 廚具控天堂，但需注意下午較早關門。</li>
+                    <li>**秋葉原**: 電玩與動漫聖地，可安排晚餐或宵夜。</li>
+                    <li>**晴空塔**: 傍晚登塔欣賞東京夜景。</li>
+                </ul>
+                <button class="nav-button" data-location="淺草寺">導航到 淺草寺 (主景點)</button>
             </div>
-            <h2>🗓️ 12/29 新宿、澀谷、東京鐵塔</h2>
-            <button class="nav-button" data-location="澀谷 Shibuya Sky">導航到 澀谷 Sky</button>
+
+            <div class="day-card" data-date="12/28">
+                <div class="weather-info">
+                    🎢 12/28 迪士尼-Sea | 天氣：晴朗，13°C
+                </div>
+                <h2>🗓️ 12/28 迪士尼-Sea 一日遊</h2>
+                <p><strong>🚨 交通提醒:</strong> 從淺草搭地鐵轉JR京葉線至舞濱站，請提早出發。</p>
+                
+                <h3>🚆 交通路線：</h3>
+                <p>淺草 (人形町站) → 日比谷線 (八丁堀站) → JR京葉線 → 舞濱站。</p>
+                
+                <h3>💡 攻略建議：</h3>
+                <p>東京海洋迪士尼 (DisneySea) 建議優先搶購/預約熱門設施，如：驚魂古塔、地心探險。</p>
+                <button class="nav-button" data-location="舞濱站">導航到 舞濱站 (最近車站)</button>
+            </div>
+
+            <div class="day-card" data-date="12/29">
+                <div class="weather-info">
+                    ☀️ 12/29 新宿・澀谷 | 天氣：多雲時晴，12°C
+                </div>
+                <h2>🗓️ 12/29 新宿、澀谷、東京鐵塔</h2>
+                
+                <h3>📍 景點攻略：</h3>
+                <ul>
+                    <li>**明治神宮**: 市區中的森林，感受新年氛圍。</li>
+                    <li>**澀谷 Shibuya Sky**: 欣賞澀谷十字路口全景的制高點，需預約。</li>
+                    <li>**東京鐵塔**: 傍晚前往，夜景經典。</li>
+                    <li>**惠比壽**: 適合晚餐和散步的時尚區域。</li>
+                </ul>
+                <button class="nav-button" data-location="澀谷 Shibuya Sky">導航到 澀谷 Sky</button>
+            </div>
+
+            <div class="day-card" data-date="12/30">
+                <div class="weather-info">
+                    🐱 12/30 豪德寺 | 天氣：晴朗，13°C
+                </div>
+                <h2>🗓️ 12/30 招財貓豪德寺 (A日遊)</h2>
+                
+                <h3>🐱 豪德寺攻略：</h3>
+                <p>豪德寺是招財貓的起源地，擁有上千隻招財貓奉納。氣氛寧靜，非常適合拍照。建議搭配周邊世田谷線一日遊。</p>
+                
+                <h3>🍴 午餐建議：</h3>
+                <p>可在世田谷線沿線尋找特色咖啡廳或日式家庭料理。</p>
+                <button class="nav-button" data-location="豪德寺">導航到 豪德寺</button>
+            </div>
+
+            <div class="day-card" data-date="12/31">
+                <div class="weather-info">
+                    🗻 12/31 富士山 | 天氣：多雲，5°C
+                </div>
+                <h2>🗓️ 12/31 淺草 → 富士山 (自駕)</h2>
+                <p><strong>🚨 住宿提醒:</strong> 富士山住宿 **Hotel Clad**，在御殿場 Outlet 附近。</p>
+                
+                <h3>📍 河口湖周邊景點：</h3>
+                <ul>
+                    <li>**忍野八海**: 富士山融雪形成的八個清澈池塘。</li>
+                    <li>**新倉山淺間公園**: 拍攝富士山、五重塔、櫻花的經典角度 (需爬階梯)。</li>
+                    <li>**吉田本町商店街**: 網紅拍攝點，富士山就在街景盡頭。</li>
+                </ul>
+                <button class="nav-button" data-location="Hotel Clad">導航到 Hotel Clad (今晚住宿)</button>
+            </div>
+
+            <div class="day-card" data-date="1/1">
+                <div class="weather-info">
+                    ☀️ 1/1 御殿場市 | 天氣：晴朗，5°C
+                </div>
+                <h2>🗓️ 1/1 富士山 → 淺草 (經御殿場 Outlet)</h2>
+                
+                <h3>🛍️ 購物攻略：</h3>
+                <p>**御殿場 Premium Outlet**: 日本最大 Outlet 之一。建議先上官網下載優惠券或兌換外國人優惠手冊。</p>
+                
+                <h3>🚗 交通建議：</h3>
+                <p>自駕從御殿場回淺草約 1.5 - 2 小時車程，注意國道新年車潮。</p>
+                <button class="nav-button" data-location="御殿場 Premium Outlet">導航到 御殿場 Outlet</button>
+            </div>
+
+            <div class="day-card" data-date="1/2">
+                <div class="weather-info">
+                    🌊 1/2 鎌倉市 | 天氣：多雲轉晴，10°C
+                </div>
+                <h2>🗓️ 1/2 鎌倉一日遊 (歷史古都)</h2>
+                
+                <h3>📍 景點攻略：</h3>
+                <ul>
+                    <li>**鶴岡八幡宮**: 鎌倉最重要的神社。</li>
+                    <li>**鎌倉大佛 (高德院)**: 可付費進入大佛內部參觀。</li>
+                    <li>**小町通**: 商店街必吃 **紫薯冰淇淋**、**玉子燒三明治**。</li>
+                    <li>**江之電**: 體驗充滿懷舊氣氛的沿海電車。</li>
+                </ul>
+                <button class="nav-button" data-location="鎌倉大佛">導航到 鎌倉大佛</button>
+            </div>
+
+            <div class="day-card" data-date="1/3">
+                <div class="weather-info">
+                    🐘 1/3 上野 | 天氣：晴朗，11°C
+                </div>
+                <h2>🗓️ 1/3 上野 (文化與購物)</h2>
+                <p><strong>🚨 回程預演:</strong> 明天 $11:25$ 飛機，今天檢查行李與車輛。</p>
+                
+                <h3>📍 景點/購物：</h3>
+                <ul>
+                    <li>**上野公園**: 包含東京國立博物館、西洋美術館。</li>
+                    <li>**阿美橫丁 (Ameya-Yokocho)**: 採買零食、藥妝、乾貨等伴手禮。**可嘗試殺價！**</li>
+                    <li>**上野動物園**: 喜歡動物可參觀。</li>
+                </ul>
+                <button class="nav-button" data-location="阿美橫丁">導航到 阿美橫丁</button>
+            </div>
+
         </section>
-        
-        </main>
+
+
+        <section id="info" class="tool-section hidden">
+            <h2>✈️ 旅遊資訊與緊急聯絡</h2>
+            
+            <div class="info-card day-card">
+                <h3>💰 旅遊費用總覽</h3>
+                <ul>
+                    <li>**機票總計:** <strong>¥28,856</strong> (13478 + 15078)</li>
+                    <li>**東京住宿總計:** <strong>¥41,145</strong> (19850 + 11053 + 9782)</li>
+                    <li>**富士山住宿:** Hotel Clad (已付)</li>
+                </ul>
+            </div>
+
+            <div class="info-card day-card">
+                <h3>✈️ 航班資訊</h3>
+                <ul>
+                    <li>**去程日期:** 12/27 (10:30 到機場)</li>
+                    <li>**回程日期:** 1/4 (11:25 搭飛機)</li>
+                </ul>
+            </div>
+
+            <div class="info-card day-card">
+                <h3>🚨 緊急聯絡方式</h3>
+                <ul>
+                    <li>**台灣駐日代表處:** (+81) 3-3280-7811</li>
+                    <li>**日本報警 (警察):** <strong>110</strong></li>
+                    <li>**日本救護車/火警:** <strong>119</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="budget" class="tool-section hidden">
+            <h2>💰 旅遊記帳 (離線)</h2>
+            <p class="weather-info">所有紀錄將儲存於您的手機內，可離線操作。</p>
+
+            <div class="input-form">
+                <input type="text" id="expense-item" placeholder="項目 (e.g. 午餐)">
+                <input type="number" id="expense-amount" placeholder="金額 (JPY)">
+                <select id="expense-category">
+                    <option value="food">餐飲</option>
+                    <option value="traffic">交通</option>
+                    <option value="shopping">購物</option>
+                    <option value="other">其他</option>
+                </select>
+                <button id="add-expense-btn">新增紀錄</button>
+            </div>
+
+            <h3>總花費：<span id="total-amount">¥ 0</span></h3>
+            <ul id="expense-list">
+                </ul>
+            <button id="export-csv-btn">匯出記帳表 (CSV)</button>
+        </section>
+
+    </main>
 
     <footer class="tab-bar">
-        <a href="#itinerary" class="active">行程</a>
-        <a href="#info">資訊</a>
-        <a href="#budget">記帳</a>
+        <a href="#itinerary" id="tab-itinerary" class="active">行程</a>
+        <a href="#info" id="tab-info">資訊</a>
+        <a href="#budget" id="tab-budget">記帳</a>
     </footer>
 
     <script src="app.js"></script>
     <script>
-        // 註冊 Service Worker 實現 PWA 功能
+        // 註冊 Service Worker 實現 PWA 功能 (必須在根目錄)
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
             .then(reg => console.log('Service Worker 註冊成功:', reg.scope))
             .catch(err => console.error('Service Worker 註冊失敗:', err));
         }
+
+        // --- Tab 頁面切換邏輯 (PWA 導航) ---
+        const tabs = document.querySelectorAll('.tab-bar a');
+        const sections = document.querySelectorAll('.content-container > section');
+
+        function switchTab(targetId) {
+            // 隱藏所有內容區塊
+            sections.forEach(section => {
+                section.classList.remove('active-tab');
+                section.classList.add('hidden');
+            });
+            // 顯示目標區塊
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('active-tab');
+            }
+            
+            // 更新底部導覽列的 active 狀態
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(`tab-${targetId}`).classList.add('active');
+        }
+
+        // 監聽 Tab Bar 點擊事件
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = tab.getAttribute('href').substring(1); // 取得 id (e.g., 'itinerary')
+                switchTab(targetId);
+            });
+        });
+
+        // 初始化顯示行程頁面
+        switchTab('itinerary');
+
+        // 當頁面 hash 改變時 (e.g., 分享連結帶有 #info)
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.substring(1) || 'itinerary';
+            switchTab(hash);
+        });
     </script>
 </body>
 </html>
