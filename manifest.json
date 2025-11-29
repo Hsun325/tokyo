@@ -1,5 +1,5 @@
 {
-    "name": "東京自駕旅遊小工具",
+    "name": "王小棠的東京生日之旅 🐱",
     "short_name": "tokyo",
     "start_url": "./index.html",
     "display": "standalone",
@@ -19,4 +19,5 @@
         }
     ]
 }
+
 
