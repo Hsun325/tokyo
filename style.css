@@ -46,22 +46,6 @@ body {
     width: 100%; 
 }
 
-/* === 行程橫向滾動的核心 CSS === */
-
-/* 1. 橫向滾動容器：確保內容不換行，並啟用水平滾動 */
-.scroll-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; /* 讓 iOS 滾動更流暢 */
-    white-space: nowrap; /* 確保內容不換行 */
-    padding: 10px 0 20px 0; /* 頂部和底部留白 */
-    width: 100%;
-}
-/* 隱藏滾動條（選用，讓介面更像 App） */
-.scroll-wrapper::-webkit-scrollbar {
-    display: none; 
-}
-
 /* 2. 行程卡片容器：強制所有卡片並排 */
 .itinerary-container.horizontal-cards {
     display: flex;
@@ -268,3 +252,4 @@ body {
     width: 100%;
     font-weight: bold;
 }
+
