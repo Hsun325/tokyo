@@ -326,12 +326,19 @@
                     tabLink.classList.add('active');
                 }
 
-                if (history.pushState) {
-                    history.pushState(null, null, `#${id}`);
-                } else {
-                    window.location.hash = id;
-                }
-            });
+               // 修正後的程式碼
+              tabLink.addEventListener('click', (e) => {
+                  e.preventDefault(); // 阻止瀏覽器預設的錨點跳轉行為
+                  switchDayContent(id); // 正常切換日期內容顯示
+    
+                // ★★★ 修正跳轉的關鍵：使用 history.pushState 更新 URL hash，但不觸發頁面滾動
+                  if (history.pushState) {
+                  history.pushState(null, null, `#${id}`); // 安全地更新 URL hash
+                  } else {
+                   // 如果瀏覽器不支援，則使用舊方法作為備用（但會跳轉）
+        window.location.hash = id; 
+    }
+});
                 dayTabsContainer.appendChild(tabLink);
             });
         }
