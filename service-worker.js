@@ -17,10 +17,10 @@ const urlsToCache = [
     '/images/shibuya-sky.jpg',
     '/images/gotokuji.jpg',
     '/images/fuji.jpg',
-    '/images/outlet.jpg',
+    '/images/fuji.jpg',
     '/images/kamakura.jpg',
     '/images/ueno.jpg',
-    '/images/airport.jpg'
+    '/images/home.jpg'
 ];
 
 // 1. 安裝階段：快取所有所需資源
@@ -76,3 +76,4 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
