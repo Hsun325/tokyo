@@ -326,11 +326,12 @@
                     tabLink.classList.add('active');
                 }
 
-                tabLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    switchDayContent(id); // 切換日期內容
-                    window.location.hash = id; // 更新 Hash
-                });
+                if (history.pushState) {
+                    history.pushState(null, null, `#${id}`);
+                } else {
+                    window.location.hash = id;
+                }
+            });
                 dayTabsContainer.appendChild(tabLink);
             });
         }
@@ -459,6 +460,7 @@
     </script>
 </body>
 </html>
+
 
 
 
