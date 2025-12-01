@@ -1,11 +1,12 @@
 /* 設置 CSS 變數，方便統一主題色 */
 :root {
-    --primary-color: #a88d71; /* 常用於按鈕和高亮 */
-    --background-light: #CACFE4; /* 極淺灰色背景 */
+    --primary-color: #a88d71; /* 常用於按鈕和高亮 (深米色/棕色) */
+    --background-light: #CACFE4; /* 用戶指定的淺藍灰背景 */
     --card-background: #ffffff; /* 卡片白色背景 */
     --text-primary: #111111; /* 主要深色文字 */
     --text-secondary: #555555; /* 次要淺色文字 */
     --border-radius-lg: 16px; /* 大圓角 */
+    --color-red-hot: #FF5C5C; /* 新增: 截圖中的活躍 Tab 顏色 */
 
     /* 記帳分類顏色 */
     --color-food: #FF7043;    /* 餐飲: 橘色 */
@@ -24,20 +25,61 @@ body {
     padding-bottom: 70px; /* 為底部導覽列保留空間 */
 }
 
-/* App Header 頂部 - 實現置中和縮小 */
+/* App Header 頂部 */
 .app-header {
     background-color: var(--card-background);
     padding: 20px 20px 15px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08); 
-    text-align: center; /* <<< 已修改為置中 */
+    text-align: center; 
     position: sticky;
     top: 0;
     z-index: 10;
 }
 .app-header h1 {
-    font-size: 1.2em; /* <<< 已修改為縮小字體 */
+    font-size: 1.2em; 
     font-weight: 700; 
     margin: 0;
+}
+
+/* -------------------------------------- */
+/* 頂部日期滾動欄 (Day Scroll Nav) */
+/* -------------------------------------- */
+.day-scroll-nav {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px 10px; /* 內距 */
+    gap: 8px; /* Tab 間距 */
+    background-color: var(--card-background);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    position: sticky; /* 固定在 Header 下方 */
+    top: 60px; /* 假設 Header 高度約 60px */
+    z-index: 9;
+    /* 隱藏滾動條 */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.day-scroll-nav::-webkit-scrollbar {
+    display: none;
+}
+
+/* 日期 Tab 圓角按鈕 */
+.day-scroll-nav a {
+    flex-shrink: 0; /* 阻止 Tab 被擠壓 */
+    padding: 8px 15px;
+    border-radius: 20px; /* 圓角膠囊形狀 */
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background-color: #f0f0f0;
+    transition: all 0.2s;
+    min-width: 55px;
+    text-align: center;
+}
+.day-scroll-nav a.active {
+    background-color: var(--color-red-hot); /* 活躍 Tab 顏色 */
+    color: white;
+    box-shadow: 0 2px 4px rgba(255, 92, 92, 0.4);
 }
 
 /* 主內容容器 */
@@ -45,25 +87,57 @@ body {
     width: 100%; 
 }
 
-/* === 獨立行程頁面樣式 (取代舊的 .itinerary-container) === */
+/* 獨立行程頁面樣式 */
 .itinerary-day, .tool-section {
-    padding: 10px; /* 內邊距 */
+    padding: 0 10px; /* 讓卡片左右頂到邊緣 */
     box-sizing: border-box;
 }
 
+/* --- 卡片與圖片樣式 --- */
 
-/* 行程卡片與工具區塊 (保持核心風格) */
+/* 行程卡片與工具區塊 */
 .day-card, .tool-section {
     background-color: var(--card-background);
     border-radius: var(--border-radius-lg); 
-    margin: 10px auto; /* 置中卡片 */
+    margin: 10px auto; 
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
     width: auto; 
-    max-width: 600px; /* 限制卡片最大寬度 */
+    max-width: 600px; 
 }
 
+/* 頂部圖片卡片 (Current Vibe Card) */
+.current-vibe-card {
+    padding: 0; /* 移除內邊距 */
+    margin: 10px auto; 
+    overflow: hidden;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.current-vibe-card p {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6); 
+}
+.current-vibe-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%); 
+}
 
+/* 行程內容卡片 - 標題和列表 */
 .day-card h2 {
     font-size: 1.2em;
     font-weight: 600; 
@@ -71,8 +145,6 @@ body {
     margin-bottom: 15px;
     color: var(--primary-color);
 }
-
-/* 天氣/提醒資訊 */
 .weather-info {
     font-size: 0.9em;
     color: var(--text-secondary);
@@ -81,9 +153,22 @@ body {
     border-bottom: 1px solid #eeeeee;
 }
 .day-card ul {
-    padding-left: 20px;
+    list-style: none;
+    padding-left: 0;
     margin-top: 10px;
     margin-bottom: 15px;
+}
+.day-card ul li {
+    padding: 5px 0 5px 20px;
+    position: relative;
+}
+.day-card ul li::before {
+    content: '•'; /* 使用自定義點點 */
+    color: var(--primary-color);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 6px;
 }
 .day-card strong {
     font-weight: 700;
@@ -103,41 +188,40 @@ body {
     width: 100%;
     transition: background-color 0.2s;
 }
-
 .nav-button:active {
     background-color: #007bb5;
 }
 
-/* 底部 Tab Bar (動態日期 + 資訊/記帳) */
-.tab-bar {
+/* -------------------------------------- */
+/* 底部固定 Tab Bar (Main Tab Bar) */
+/* -------------------------------------- */
+#main-tab-bar { /* 使用 ID 鎖定底部 Tab */
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: flex-start; /* <<< 調整為靠左，讓多個 Tab 可以滾動 */
+    justify-content: space-around; /* 平均分佈三個 Tab */
     align-items: center;
     height: 70px;
     background-color: var(--card-background);
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     z-index: 100;
-    overflow-x: scroll; /* <<< 允許橫向滾動 */
-    padding: 0 5px;
-    -webkit-overflow-scrolling: touch; /* 改善 iOS 上的滾動體驗 */
+    overflow-x: hidden;
+    padding: 0;
 }
-.tab-bar a {
+#main-tab-bar a {
     color: var(--text-secondary);
     text-decoration: none;
-    padding: 10px 8px; /* <<< 縮小左右 padding 以容納更多 Tab */
+    padding: 10px 15px;
     font-weight: 600;
     transition: color 0.2s;
-    font-size: 0.75em; /* <<< 縮小字體以容納更多 Tab */
-    min-width: 55px; /* 確保每個 Tab 都有最小寬度 */
+    font-size: 0.9em;
+    flex-grow: 1; 
     text-align: center;
-    flex-shrink: 0; /* 阻止 Tab 被擠壓 */
 }
-.tab-bar a.active {
+#main-tab-bar a.active {
     color: var(--primary-color);
 }
 
@@ -146,7 +230,7 @@ body {
     display: none !important;
 }
 
-/* --- 記帳功能樣式，保持不變 --- */
+/* --- 記帳功能樣式 --- */
 .input-form {
     display: flex;
     gap: 10px;
@@ -187,12 +271,6 @@ body {
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
     font-size: 1em;
-}
-#expense-list li span:first-child {
-    font-weight: 500;
-}
-#expense-list li span:nth-child(2) {
-    font-weight: 700;
 }
 #expense-list li small {
     font-size: 0.8em;
