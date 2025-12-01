@@ -5,7 +5,8 @@
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#0099FF",
-    "description": "東京與富士山自駕行專屬行程、記帳、導航 PWA。",
+    "description": "tokyo",
+    
     "icons": [
         {
             "src": "icon-192x192.png",
@@ -19,5 +20,6 @@
         }
     ]
 }
+
 
 
