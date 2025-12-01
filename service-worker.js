@@ -1,5 +1,5 @@
 // 【重要】快取版本已遞增到 v12，以強制更新新的 HTML 和 CSS 結構
-const CACHE_NAME = 'tokyo-trip-cache-v12'; 
+const CACHE_NAME = 'tokyo-trip-cache-v13'; 
 
 const urlsToCache = [
     '/',
@@ -28,7 +28,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                console.log('Opened cache, v12'); // 顯示新版本
+                console.log('Opened cache, v13'); // 顯示新版本
                 return cache.addAll(urlsToCache);
             })
             // 立即跳過等待，讓 Service Worker 進入激活狀態
@@ -76,4 +76,5 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
 
