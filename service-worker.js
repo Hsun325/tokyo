@@ -14,7 +14,7 @@ const urlsToCache = [
     // 【已修正】圖片路徑從 /images/ 改為 /image/，以匹配 index.html 中的引用
     '/image/asukana.jpg',
     '/image/disney-sea.jpg',
-    '/image/shibuya.jpg',
+    '/image/shibuya-sky.jpg',
     '/image/gotokuji.jpg',
     '/image/fuji.jpg',
     '/image/kamakura.jpg',
@@ -80,4 +80,5 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
 
