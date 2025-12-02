@@ -312,27 +312,3 @@ body {
     width: 100%;
     font-weight: bold;
 }
-
-/* --- 新增：將行程中的按鈕轉換為彩色連結樣式 (淡咖啡色) --- */
-
-.action-link {
-    /* 移除所有按鈕預設樣式 */
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    
-    /* 連結文字樣式 */
-    display: inline-block;
-    color: var(--primary-color); /* 使用淡咖啡色 (primary-color) */
-    text-decoration: none; /* 移除預設的下劃線 */
-    cursor: pointer; /* 顯示手型指標，表示可點擊 */
-    font-weight: bold; /* 加粗字體以突顯 */
-    
-    transition: color 0.1s ease; /* 增加過渡效果 */
-}
-
-.action-link:hover {
-    color: #8C7560; /* 懸停時顏色略深一點 */
-    text-decoration: underline; /* 懸停時加上下劃線，更像連結 */
-}
