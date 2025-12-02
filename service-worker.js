@@ -1,5 +1,5 @@
 // 【重要】快取版本已遞增到 v13，以強制更新新的 HTML 和 CSS 結構
-const CACHE_NAME = 'tokyo-trip-cache-v14'; 
+const CACHE_NAME = 'tokyo-trip-cache-v15'; 
 
 const urlsToCache = [
     '/',
@@ -12,7 +12,7 @@ const urlsToCache = [
     '/icon-512x512.png',
     
     // 【已修正】圖片路徑從 /images/ 改為 /image/，以匹配 index.html 中的引用
-    '/image/asukana.jpg',
+    '/image/asukuna.jpg',
     '/image/sea.jpg',
     '/image/shibuya-sky.jpg',
     '/image/gotokuji.jpg',
@@ -27,7 +27,7 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
-                console.log('Opened cache, v14'); // 顯示新版本
+                console.log('Opened cache, v15'); // 顯示新版本
                 return cache.addAll(urlsToCache);
             })
             // 立即跳過等待，讓 Service Worker 進入激活狀態
@@ -80,6 +80,7 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
 
 
 
