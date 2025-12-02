@@ -324,7 +324,7 @@ body {
     
     /* 連結文字樣式 */
     display: inline-block;
-    color: var(--primary-color); /* **使用淡咖啡色 (primary-color)** */
+    color: var(--primary-color); /* 使用淡咖啡色 (primary-color) */
     text-decoration: none; /* 移除預設的下劃線 */
     cursor: pointer; /* 顯示手型指標，表示可點擊 */
     font-weight: bold; /* 加粗字體以突顯 */
@@ -333,6 +333,6 @@ body {
 }
 
 .action-link:hover {
-    color: #8C7560; /* 懸停時顏色略深一點 (原色變暗) */
+    color: #8C7560; /* 懸停時顏色略深一點 */
     text-decoration: underline; /* 懸停時加上下劃線，更像連結 */
 }
