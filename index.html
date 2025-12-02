@@ -1,492 +1,550 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tokyo</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css"> 
-    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tokyo</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    
-    <header class="app-header">
-        <h1>王小棠的東京生日之旅 🐱</h1>
-    </header>
+    
+    <header class="app-header">
+        <h1>王小棠的東京生日之旅 🐱</h1>
+    </header>
 
-    <nav class="day-scroll-nav" id="day-tabs-container">
-        </nav>
-    
-    <main class="content-container">
-        <section id="day-12-27" class="itinerary-day active-page">
-            <div class="day-card current-vibe-card" style="background-image: url('image/asukuna.jpg');">
-                <p>淺草 あさくさ</p></div>            
-                        <div class="day-card detail-card" data-date="12/27" data-city="Sumida">
-                <div class="weather-info">
-                  12/27 淺草 | 天氣：載入中...
+    <nav class="day-scroll-nav" id="day-tabs-container">
+    </nav>
+    
+    <main class="content-container">
+        
+        <section id="day-12-27" class="itinerary-day active-page">
+            <div class="day-card current-vibe-card" style="background-image: url('image/asukuna.jpg');">
+                <p>⛩️ 淺草</p></div>             
+            <div class="day-card detail-card" data-date="12/27" data-city="Sumida">
+                <div class="weather-info">
+                    12/27 淺草 | 天氣：載入中...
                 </div>
-                <h2>🗓️ 12/27 淺草</h2>
-                <p><strong>住宿:</strong> 花築淺草和心飯店</p>
-                
-                <h3>📍 行程：</h3>
-                <ul>
-                    <li>淺草寺 / 仲見世商店街</li>
-                    <li>合羽橋道具街</li>
-                    <li>秋葉原</li>
-                    <li>晴空塔</li>
-                </ul>
-            </div>
-        </section>
+                <h2>🗓️ 12/27 淺草</h2>
+                <p><strong>住宿:</strong> 花築淺草和心飯店</p>              
+                <h3>📍 行程：</h3>
+                <ul>
+                    <li>
+                        <button id="narita-guide-button" class="action-button">
+                            ✈️ 11:00 成田機場往淺草 (交通攻略)
+                        </button>
+                    </li>
+                    <li>淺草寺 / </li>
+                    <li>仲見世商店街</li>
+                    <li>合羽橋道具街</li>                    
+                    <li>晴空塔</li>
+                    <li>秋葉原</li>
+                </ul>
+            </div>
+        </section>
 
-        <section id="day-12-28" class="itinerary-day hidden">
-             <div class="day-card current-vibe-card" style="background-image: url('image/sea.jpg');">
-                <p>🎢 Disney Sea</p></div>
-                        <div class="day-card detail-card" data-date="12/28" data-city="Urayasu">
-                <div class="weather-info">
-                  12/28 disney-Sea | 天氣：載入中...
+        <section id="day-12-28" class="itinerary-day hidden">
+             <div class="day-card current-vibe-card" style="background-image: url('image/sea.jpg');">
+                <p>🎢 Disney Sea</p></div>
+                        <div class="day-card detail-card" data-date="12/28" data-city="Urayasu">
+                <div class="weather-info">
+                    12/28 disney-Sea | 天氣：載入中...
                 </div>
-                <h2>🗓️ 12/28 disney-Sea </h2>
-                <p><strong>🚨 交通提醒:</strong> 從淺草搭地鐵轉JR京葉線至舞濱站，請提早出發。</p>
-                
-                <h3>🚆 交通路線：</h3>
-                <p>淺草 (人形町站) → 日比谷線 (八丁堀站) → JR京葉線 → 舞濱站。</p>
-            </div>
-        </section>
+                <h2>🗓️ 12/28 disney-Sea </h2>
+                <p><strong>🚨 交通提醒:</strong> 從淺草搭地鐵轉JR京葉線至舞濱站，請提早出發。</p>
+                
+                <h3>🚆 交通路線：</h3>
+                <p>淺草 (人形町站) → 日比谷線 (八丁堀站) → JR京葉線 → 舞濱站。</p>
+            </div>
+        </section>
 
-        <section id="day-12-29" class="itinerary-day hidden">
-             <div class="day-card current-vibe-card" style="background-image: url('image/shibuya-sky.jpg');">
-                <p>新宿・澀谷</p></div>       
-             <div class="day-card detail-card" data-date="12/29" data-city="Shibuya">
-                <div class="weather-info">
-                  12/29 新宿・澀谷 | 天氣：載入中... 
+        <section id="day-12-29" class="itinerary-day hidden">
+             <div class="day-card current-vibe-card" style="background-image: url('image/shibuya-sky.jpg');">
+                <p>🏢 新宿・澀谷</p></div>     
+             <div class="day-card detail-card" data-date="12/29" data-city="Shibuya">
+                <div class="weather-info">
+                    12/29 新宿・澀谷 | 天氣：載入中... 
                 </div>
-                <h2>🗓️ 12/29 新宿、澀谷、東京鐵塔</h2>                
-                <h3>📍 景點攻略：</h3>
-                <ul>
-                    <li>明治神宮</li>
-                    <li>澀谷 Shibuya Sky</li>
-                    <li>東京鐵塔</li>
-                    <li>惠比壽</li>
-                </ul>
-            </div>
-        </section>
-        
-        <section id="day-12-30" class="itinerary-day hidden">
-            <div class="day-card current-vibe-card" style="background-image: url('image/gotokuji.jpg');">
-                <p>豪德寺</p></div>
-            <div class="day-card detail-card" data-date="12/30" data-city="Setagaya">
-                <div class="weather-info">
-                  12/30 豪德寺 | 天氣：載入中...
+                <h2>🗓️ 12/29 新宿、澀谷、東京鐵塔</h2>             
+                <h3>📍 景點攻略：</h3>
+                <ul>
+                    <li>明治神宮</li>
+                    <li>澀谷 Shibuya Sky</li>
+                    <li>東京鐵塔</li>
+                    <li>惠比壽</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="day-12-30" class="itinerary-day hidden">
+            <div class="day-card current-vibe-card" style="background-image: url('image/gotokuji.jpg');">
+                <p>🐱 豪德寺</p></div>
+            <div class="day-card detail-card" data-date="12/30" data-city="Setagaya">
+                <div class="weather-info">
+                    12/30 豪德寺 | 天氣：載入中...
                 </div>
-                <h2>🗓️ 12/30 豪德寺</h2>
-                <h3>🐱 豪德寺：</h3>
-                <p>豪德寺是招財貓的起源地...</p>
-                <h3>🍴 午餐</h3>
-                <p>看要吃啥</p>
-            </div>
-        </section>
+                <h2>🗓️ 12/30 豪德寺</h2>
+                <h3>🐱 豪德寺：</h3>
+                <p>豪德寺是招財貓的起源地...</p>
+                <h3>🍴 午餐</h3>
+                <p>看要吃啥</p>
+            </div>
+        </section>
 
-        <section id="day-12-31" class="itinerary-day hidden">
-            <div class="day-card current-vibe-card" style="background-image: url('image/fuji.jpg');">
-                <p>🗻 富士山</p></div>
-            <div class="day-card detail-card" data-date="12/31" data-city="Gotemba">
-                <div class="weather-info">
-                  12/31 富士山-御殿場 | 天氣：載入中...
+        <section id="day-12-31" class="itinerary-day hidden">
+            <div class="day-card current-vibe-card" style="background-image: url('image/fuji.jpg');">
+                <p>🗻 富士山</p></div>
+            <div class="day-card detail-card" data-date="12/31" data-city="Gotemba">
+                <div class="weather-info">
+                    12/31 富士山-御殿場 | 天氣：載入中...
                 </div>
-                <h2>🗓️ 12/31 淺草 → 富士山 </h2>
-                <p><strong> 住宿:</strong> Hotel Clad</p>
-                <h3>🚗 交通：</h3>
-                <p>自駕從御殿場回上野約 1.5 - 2 小時</p>
-                <button class="nav-button" data-location="Hotel Clad">導航到 Hotel Clad </button>
-            </div>
-        </section>
+                <h2>🗓️ 12/31 淺草 → 富士山 </h2>
+                <p><strong> 住宿:</strong> Hotel Clad</p>
+                <h3>🚗 交通：</h3>
+                <p>自駕從御殿場回上野約 1.5 - 2 小時</p>
+                <button class="nav-button" data-location="Hotel Clad">導航到 Hotel Clad </button>
+            </div>
+        </section>
 
-        <section id="day-1-1" class="itinerary-day hidden">
-            <div class="day-card current-vibe-card" style="background-image: url('image/fuji.jpg');">
-                <p>🗻 富士山</p></div>
-            <div class="day-card detail-card" data-date="1/1" data-city="Fujikawaguchiko">
-                <div class="weather-info">
-                  1/1 富士山-河口湖 | 天氣：載入中...
+        <section id="day-1-1" class="itinerary-day hidden">
+            <div class="day-card current-vibe-card" style="background-image: url('image/fuji.jpg');">
+                <p>🗻 富士山</p></div>
+            <div class="day-card detail-card" data-date="1/1" data-city="Fujikawaguchiko">
+                <div class="weather-info">
+                    1/1 富士山-河口湖 | 天氣：載入中...
                 </div>
-                <h2>🗓️ 1/1 富士山 → 上野 </h2>
-                <p><strong>住宿:</strong> Hotel Apreton</p>                            
-                <h3>📍 河口湖周邊景點：</h3>
-                <ul><li>忍野八海</li><li>新倉山淺間公園</li><li>吉田本町商店街</li></ul>
-                <button class="nav-button" data-location="Hotel Apreton">導航到 Hotel Apreton</button>
-            </div>
-        </section>
+                <h2>🗓️ 1/1 富士山 → 上野 </h2>
+                <p><strong>住宿:</strong> Hotel Apreton</p>                        
+                <h3>📍 河口湖周邊景點：</h3>
+                <ul><li>忍野八海</li><li>新倉山淺間公園</li><li>吉田本町商店街</li></ul>
+                <button class="nav-button" data-location="Hotel Apreton">導航到 Hotel Apreton</button>
+            </div>
+        </section>
 
-        <section id="day-1-2" class="itinerary-day hidden">
-            <div class="day-card current-vibe-card" style="background-image: url('image/kamakura.jpg');">
-                <p>🌊 鎌倉</p></div>
-            <div class="day-card detail-card" data-date="1/2" data-city="Kamakura">
-                <div class="weather-info">
-                  1/2 鎌倉市 | 天氣：載入中...
+        <section id="day-1-2" class="itinerary-day hidden">
+            <div class="day-card current-vibe-card" style="background-image: url('image/kamakura.jpg');">
+                <p>🌊 鎌倉</p></div>
+            <div class="day-card detail-card" data-date="1/2" data-city="Kamakura">
+                <div class="weather-info">
+                    1/2 鎌倉市 | 天氣：載入中...
                 </div>
-                <h2>🗓️ 1/2 鎌倉一日遊</h2>
-                <h3>📍 景點攻略：</h3>
-                <ul><li>鶴岡八幡宮</li><li>鎌倉大佛</li><li>小町通</li><li>江之電</li></ul>
-            </div>
-        </section>
+                <h2>🗓️ 1/2 鎌倉一日遊</h2>
+                <h3>📍 景點攻略：</h3>
+                <ul><li>鶴岡八幡宮</li><li>鎌倉大佛</li><li>小町通</li><li>江之電</li></ul>
+            </div>
+        </section>
 
-        <section id="day-1-3" class="itinerary-day hidden">
-            <div class="day-card current-vibe-card" style="background-image: url('image/ueno.jpg');"><p>🐘 上野</p></div>
-                        <div class="day-card detail-card" data-date="1/3" data-city="Taito">
-                <div class="weather-info">
-                  1/3 上野 | 天氣：載入中...
+        <section id="day-1-3" class="itinerary-day hidden">
+            <div class="day-card current-vibe-card" style="background-image: url('image/ueno.jpg');">
+                <p>🌸 上野</p></div>
+            <div class="day-card detail-card" data-date="1/3" data-city="Taito">
+                <div class="weather-info">
+                    1/3 上野 | 天氣：載入中...
                 </div>
-                <h2>🗓️ 1/3 上野</h2>
-                <p><strong>🚨 逛街:</strong>隨便逛逛 </p>
-                <h3>📍 景點/購物：</h3>
-                <ul><li>上野公園:</li><li>阿美橫丁 </li><li>上野動物園</li></ul>
-            </div>
-        </section>
+                <h2>🗓️ 1/3 上野</h2>
+                <p><strong>🚨 逛街:</strong>隨便逛逛 </p>
+                <h3>📍 景點/購物：</h3>
+                <ul><li>上野公園:</li><li>阿美橫丁 </li><li>上野動物園</li></ul>
+            </div>
+        </section>
 
-        <section id="day-1-4" class="itinerary-day hidden">
-            <div class="day-card current-vibe-card" style="background-image: url('image/home.jpg');">
-                <p>Home</p></div>
-            <div class="day-card detail-card" data-date="1/4" data-city="Narita">
-                <div class="weather-info">
-                  1/4 成田機場 | 天氣：載入中...
+        <section id="day-1-4" class="itinerary-day hidden">
+            <div class="day-card current-vibe-card" style="background-image: url('image/home.jpg');">
+                <p>✈️ Home</p></div>
+            <div class="day-card detail-card" data-date="1/4" data-city="Narita">
+                <div class="weather-info">
+                    1/4 成田機場 | 天氣：載入中...
                 </div>
-                <h2>🗓️ 1/4 回家</h2>
-                <p><strong>🚨 回程:</strong> 11:25 飛機，檢查行李</p>
-                <h3>📍 景點/購物：</h3>
-                <ul><li>機場周邊</li></ul>
-            </div>
-        </section>
+                <h2>🗓️ 1/4 回家</h2>
+                <p><strong>🚨 回程:</strong> 11:25 飛機，檢查行李</p>
+                <h3>📍 景點/購物：</h3>
+                <ul><li>機場周邊</li></ul>
+            </div>
+        </section>
+        
+        <section id="info" class="tool-section hidden">
+            <h2>✈️ 旅遊資訊與緊急聯絡</h2>
+            <div class="info-card day-card">
+                <h3>💰 旅遊費用總覽</h3>
+                <ul>
+                    <li>機票總計: <strong>28,856</strong> (13478 + 15078)</li>
+                    <li>住宿總計: <strong>44,274</strong> (19946 + 13221 + 11107)</li>            
+                </ul>
+            </div>
 
-        <section id="info" class="tool-section hidden">
-            <h2>✈️ 旅遊資訊與緊急聯絡</h2>
-            <div class="info-card day-card">
-                <h3>💰 旅遊費用總覽</h3>
-                <ul>
-                    <li>機票總計: <strong>28,856</strong> (13478 + 15078)</li>
-                    <li>住宿總計: <strong>44,274</strong> (19946 + 13221 + 11107)</li>                   
-                </ul>
-            </div>
+            <div class="info-card day-card">
+                <h3>✈️ 航班資訊</h3>
+                <ul>
+                    <li>12/27 IT200</li>
+                    <li>TPE-NRT:06:10-10:35</li>
+                    <li>01/04 IT201</li>
+                    <li>NRT-TPE:11:25-14:45</li>
+                </ul>
+            </div>
 
-            <div class="info-card day-card">
-                <h3>✈️ 航班資訊</h3>
-                <ul>
-                    <li>12/27 IT200</li>
-                    <li>TPE-NRT:06:10-10:35</li>
-                    <li>01/04 IT201</li>
-                    <li>NRT-TPE:11:25-14:45</li>
-                </ul>
-            </div>
+            <div class="info-card day-card">
+                <h3>🚨 緊急聯絡方式</h3>
+                <ul>
+                    <li>台灣駐日代表處: (+81) 3-3280-7811</li>
+                    <li>日本報警 (警察): <strong>110</strong></li>
+                    <li>日本救護車/火警: <strong>119</strong></li>
+                </ul>
+            </div>
+        </section>
 
-            <div class="info-card day-card">
-                <h3>🚨 緊急聯絡方式</h3>
-                <ul>
-                    <li>台灣駐日代表處: (+81) 3-3280-7811</li>
-                    <li>日本報警 (警察): <strong>110</strong></li>
-                    <li>日本救護車/火警: <strong>119</strong></li>
-                </ul>
-            </div>
-            </section>
+        <section id="budget" class="tool-section hidden">
+            
+            <h2>💰 記帳 </h2>
+          
+            <div class="input-form">
+                <input type="text" id="expense-item" placeholder="項目 (e.g. 午餐)">
+                <input type="number" id="expense-amount" placeholder="金額 (JPY)">
+                <select id="expense-category">
+                    <option value="food">餐飲</option>
+                    <option value="traffic">交通</option>
+                    <option value="shopping">購物</option>
+                    <option value="other">其他</option>
+                </select>
+                <button id="add-expense-btn">add</button>
+            </div>
 
-        <section id="budget" class="tool-section hidden">
-           
-            <h2>💰 記帳 </h2>
-          
-            <div class="input-form">
-                <input type="text" id="expense-item" placeholder="項目 (e.g. 午餐)">
-                <input type="number" id="expense-amount" placeholder="金額 (JPY)">
-                <select id="expense-category">
-                    <option value="food">餐飲</option>
-                    <option value="traffic">交通</option>
-                    <option value="shopping">購物</option>
-                    <option value="other">其他</option>
-                </select>
-                <button id="add-expense-btn">add</button>
-            </div>
+            <h3>總花費：<span id="total-amount">¥ 0</span></h3>
+            <ul id="expense-list">
+                </ul>
+            <button id="export-csv-btn">匯出記帳表</button>
+        </section>
+        
+        <section id="narita-guide" class="itinerary-day guide-page hidden">
+            <button id="back-to-12-27" class="back-button">
+                ⬅️ 返回 12/27 行程
+            </button>
 
-            <h3>總花費：<span id="total-amount">¥ 0</span></h3>
-            <ul id="expense-list">
-                </ul>
-            <button id="export-csv-btn">匯出記帳表</button>
-            </section>
+            <h2>✈️ 成田機場 NRT → 淺草交通攻略</h2>
+            
+            <p><strong>🕒 預計時間：</strong> 約 65 - 80 分鐘</p>
+            
+            <h3>🚆 推薦路線：</h3>
+            <div class="tip-card">
+                <p><strong>🌟 首選：京成電鐵 Access 特急</strong></p>
+                <ul>
+                    <li>**特色：** 最快且最直達淺草的選擇。</li>
+                    <li>**搭乘地點：** 成田機場 (Narita Airport T1/T2)</li>
+                    <li>**目的地：** 往 羽田機場 的列車，**無須轉車**，直達**淺草站**。</li>
+                    <li>**費用：** 約 ¥1,390</li>
+                </ul>
+            </div>
+            
+            <div class="tip-card">
+                <p><strong>⚠️ 注意事項</strong></p>
+                <p>請務必確認列車標示為 **Access Express**，避免搭乘 Skyliner (需轉車且較貴)。</p>
+            </div>
+            
+        </section>
 
-    </main>
+    </main>
 
-    <footer class="tab-bar" id="main-tab-bar">
-        <a href="#day-12-27" id="tab-itinerary" class="active">行程</a>
-        <a href="#info" id="tab-info">資訊</a>
-        <a href="#budget" id="tab-budget">記帳</a>
-    </footer>
+    <footer class="tab-bar" id="main-tab-bar">
+        <a href="#day-12-27" id="tab-itinerary" class="active">行程</a>
+        <a href="#info" id="tab-info">資訊</a>
+        <a href="#budget" id="tab-budget">記帳</a>
+    </footer>
 
-    <script src="app.js"></script>
-    
-    <script>
-        // --- [天氣 API 串接邏輯] ---
-        
-        // 使用者提供的 OpenWeatherMap API 金鑰
-        const API_KEY = '0a105245bb3204d9430443e75d49c05c'; 
-        const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather';
+    <script src="app.js"></script>
+    
+    <script>
+        // --- [天氣 API 串接邏輯] ---
+        const API_KEY = '0a105245bb3204d9430443e75d49c05c'; 
+        const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
-        /**
-         * 根據城市名稱從 OpenWeatherMap 獲取天氣資料
-         */
-        async function fetchWeatherForCity(city) {
-            // q={city},JP: 查詢城市在日本，units=metric: 攝氏度，lang=zh_tw: 繁體中文
-            const url = `${WEATHER_API_URL}?q=${city},JP&appid=${API_KEY}&units=metric&lang=zh_tw`;
-            
-            try {
-                const response = await fetch(url);
-                if (!response.ok) {
-                    // 打印錯誤狀態碼以方便除錯
-                    console.error(`無法獲取 ${city} 的天氣 (HTTP 狀態碼: ${response.status})：`, response.statusText);
-                    return null;
-                }
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error("天氣 API 網路請求錯誤:", error);
-                return null;
-            }
-        }
+        async function fetchWeatherForCity(city) {
+            const url = `${WEATHER_API_URL}?q=${city},JP&appid=${API_KEY}&units=metric&lang=zh_tw`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    console.error(`無法獲取 ${city} 的天氣 (HTTP 狀態碼: ${response.status})：`, response.statusText);
+                    return null;
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("天氣 API 網路請求錯誤:", error);
+                return null;
+            }
+        }
 
-        /**
-         * 更新 DOM 中對應行程卡片的天氣資訊
-         */
-        function updateWeatherDisplay(detailCard, weatherData) {
-            const weatherInfoDiv = detailCard.querySelector('.weather-info');
-            if (!weatherInfoDiv) return;
+        function updateWeatherDisplay(detailCard, weatherData) {
+            const weatherInfoDiv = detailCard.querySelector('.weather-info');
+            if (!weatherInfoDiv) return;
 
             if (!weatherData || !weatherData.main || !weatherData.weather || weatherData.weather.length === 0) {
-                // 如果獲取失敗，顯示錯誤訊息
                 weatherInfoDiv.innerHTML = `<span style="color: red;">[天氣載入失敗]</span>`;
                 return;
             }
 
-            const temp = Math.round(weatherData.main.temp); // 溫度取整數
-            const description = weatherData.weather[0].description; // 天氣描述
-            
-            // 嘗試從靜態內容中提取日期和地點 (e.g., "12/27 淺草")
-            const originalText = weatherInfoDiv.textContent.trim();
-            // 匹配 "日期/月份 地點" 格式
-            const locationMatch = originalText.match(/(\d{1,2}\/\d{1,2}\s[^\s|]+)/); 
-            const locationDate = locationMatch ? locationMatch[1] : weatherData.name; // 如果匹配不到，使用城市英文名
+            const temp = Math.round(weatherData.main.temp); 
+            const description = weatherData.weather[0].description; 
+            const originalText = weatherInfoDiv.textContent.trim();
+            const locationMatch = originalText.match(/(\d{1,2}\/\d{1,2}\s[^\s|]+)/); 
+            const locationDate = locationMatch ? locationMatch[1] : weatherData.name; 
 
-            // 格式化輸出
-            weatherInfoDiv.innerHTML = `
-                <span style="font-weight: bold;">${locationDate}</span>
-                <span style="color: #FF7043;">| ${description}，${temp}°C</span>
-            `;
-        }
+            weatherInfoDiv.innerHTML = `
+                <span style="font-weight: bold;">${locationDate}</span>
+                <span style="color: #FF7043;">| ${description}，${temp}°C</span>
+            `;
+        }
 
-        /**
-         * 頁面載入後，對所有行程卡片進行天氣查詢
-         */
-        async function loadAllWeather() {
-            const detailCards = document.querySelectorAll('.day-card.detail-card');
-            
-            for (const card of detailCards) {
-                const city = card.getAttribute('data-city');
-                if (city) {
-                    // 確保 API Key 有效且避免短時間內對 API 產生過多請求 (Rate Limit)
-                    await new Promise(resolve => setTimeout(resolve, 150)); // 增加延遲到 150ms
-                    const weatherData = await fetchWeatherForCity(city);
-                    updateWeatherDisplay(card, weatherData);
-                }
-            }
-        }
+        async function loadAllWeather() {
+            const detailCards = document.querySelectorAll('.day-card.detail-card');
+            for (const card of detailCards) {
+                const city = card.getAttribute('data-city');
+                if (city) {
+                    await new Promise(resolve => setTimeout(resolve, 150)); 
+                    const weatherData = await fetchWeatherForCity(city);
+                    updateWeatherDisplay(card, weatherData);
+                }
+            }
+        }
+        
+        // --- [天氣 API 串接邏輯結束] ---
+        
+        // 註冊 Service Worker 實現 PWA 功能 
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker 註冊成功:', reg.scope))
+            .catch(err => console.error('Service Worker 註冊失敗:', err));
+        }
 
-        // DOM 載入後執行天氣查詢
-        document.addEventListener('DOMContentLoaded', loadAllWeather); 
-        
-        // --- [天氣 API 串接邏輯結束] ---
-        
-        // 註冊 Service Worker 實現 PWA 功能 
-        if ('serviceWorker' in navigator) {
-            // 建議將版本號提升到 v12，確保快取更新
-            navigator.serviceWorker.register('/service-worker.js')
-            .then(reg => console.log('Service Worker 註冊成功:', reg.scope))
-            .catch(err => console.error('Service Worker 註冊失敗:', err));
-        }
+        // --- Tab 頁面切換邏輯 ---
 
-        // --- Tab 頁面切換邏輯 ---
-
-        // 頂部日期 Tab 容器
-        const dayTabsContainer = document.getElementById('day-tabs-container');
-        // 底部主要 Tab
-        const mainTabs = document.querySelectorAll('#main-tab-bar a');
-        
-        // 所有內容區塊：分為 日期區塊 和 工具區塊
-        const daySections = document.querySelectorAll('.itinerary-day'); 
-        const toolSections = document.querySelectorAll('.tool-section');
-        
-        // 取得所有日期 section 的 ID 列表
-        const dayIds = Array.from(daySections).map(section => section.id);
+        const dayTabsContainer = document.getElementById('day-tabs-container');
+        const mainTabs = document.querySelectorAll('#main-tab-bar a');
+        const daySections = document.querySelectorAll('.itinerary-day:not(.guide-page)'); // 排除攻略頁面
+        const guideSections = document.querySelectorAll('.guide-page'); // 攻略頁面
+        const toolSections = document.querySelectorAll('.tool-section');
+        const dayIds = Array.from(daySections).map(section => section.id);
 
 
-        // ----------------------------------------------------
-        // I. 初始化：建立頂部日期 Tab
-        // ----------------------------------------------------
+        // ----------------------------------------------------
+        // I. 初始化：建立頂部日期 Tab
+        // ----------------------------------------------------
 
-        function buildDayTabs() {
-            dayTabsContainer.innerHTML = '';
-            dayIds.forEach((id, index) => {
-                const tabText = id.replace('day-', '').replace('-', '/'); // 提取 '12/27'
+        function buildDayTabs() {
+            dayTabsContainer.innerHTML = '';
+            dayIds.forEach((id, index) => {
+                const tabText = id.replace('day-', '').replace('-', '/'); 
 
-                const tabLink = document.createElement('a');
-                tabLink.href = `#${id}`;
-                tabLink.textContent = tabText;
-                tabLink.id = `day-tab-${id}`;
-                
-                // 預設第一個為 active
-                if (index === 0) {
-                    tabLink.classList.add('active');
-                }
+                const tabLink = document.createElement('a');
+                tabLink.href = `#${id}`;
+                tabLink.textContent = tabText;
+                tabLink.id = `day-tab-${id}`;
+                
+                if (index === 0) {
+                    tabLink.classList.add('active');
+                }
 
-               // 修正後的程式碼
-              tabLink.addEventListener('click', (e) => {
-                  e.preventDefault(); // 阻止瀏覽器預設的錨點跳轉行為
-                  switchDayContent(id); // 正常切換日期內容顯示
-    
-                // ★★★ 修正跳轉的關鍵：使用 history.pushState 更新 URL hash，但不觸發頁面滾動
-                  if (history.pushState) {
-                  history.pushState(null, null, `#${id}`); // 安全地更新 URL hash
-                  } else {
-                   // 如果瀏覽器不支援，則使用舊方法作為備用（但會跳轉）
-        window.location.hash = id; 
-    }
-});
-                dayTabsContainer.appendChild(tabLink);
-            });
-        }
-        
-        // ----------------------------------------------------
-        // II. 切換日期內容 (頂部 Tab)
-        // ----------------------------------------------------
+                tabLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchDayContent(id); 
+                    if (history.pushState) {
+                        history.pushState(null, null, `#${id}`); 
+                    } else {
+                        window.location.hash = id; 
+                    }
+                });
+                dayTabsContainer.appendChild(tabLink);
+            });
+        }
+        
+        // ----------------------------------------------------
+        // II. 切換日期內容 (頂部 Tab)
+        // ----------------------------------------------------
 
-        function switchDayContent(targetDayId) {
-            // 隱藏所有日期內容
-            daySections.forEach(section => {
-                section.classList.remove('active-page');
-                section.classList.add('hidden');
-            });
-            
-            // 顯示目標日期內容
-            const targetSection = document.getElementById(targetDayId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-                targetSection.classList.add('active-page');
-            }
+        function switchDayContent(targetDayId) {
+            // 隱藏所有日期內容 (包含攻略頁面)
+            [...daySections, ...guideSections].forEach(section => {
+                section.classList.remove('active-page');
+                section.classList.add('hidden');
+            });
+            
+            // 顯示目標日期內容
+            const targetSection = document.getElementById(targetDayId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('active-page');
+            }
 
-            // 更新頂部日期導覽列的 active 狀態
-            dayTabsContainer.querySelectorAll('a').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            const activeTab = document.getElementById(`day-tab-${targetDayId}`);
-            if (activeTab) {
-                activeTab.classList.add('active');
-                activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center' }); 
-            }
-        }
+            // 更新頂部日期導覽列的 active 狀態
+            dayTabsContainer.querySelectorAll('a').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            const activeTab = document.getElementById(`day-tab-${targetDayId}`);
+            if (activeTab) {
+                activeTab.classList.add('active');
+                activeTab.scrollIntoView({ behavior: 'smooth', inline: 'center' }); 
+            }
+        }
+        
+        // ----------------------------------------------------
+        // III. 切換攻略頁面 (由按鈕觸發)
+        // ----------------------------------------------------
+        
+        function switchGuidePage(guideId, backDayId) {
+            // 隱藏所有區塊
+            [...daySections, ...guideSections, ...toolSections].forEach(section => {
+                section.classList.remove('active-page');
+                section.classList.add('hidden');
+            });
 
-        // ----------------------------------------------------
-        // III. 切換主要頁面 (底部 Tab)
-        // ----------------------------------------------------
-        
-        function switchMainTab(targetId) {
-            // 隱藏所有日期區塊和工具區塊
-            [...daySections, ...toolSections].forEach(section => {
-                section.classList.remove('active-page');
-                section.classList.add('hidden');
-            });
-            
-            // 判斷要顯示哪個區塊
-            if (targetId === 'info' || targetId === 'budget') {
-                // 顯示工具區塊
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.remove('hidden');
-                    targetSection.classList.add('active-page');
-                }
-                dayTabsContainer.style.display = 'none'; // 隱藏日期 Tab
-            } else { 
-                // 顯示行程區塊 (預設跳轉到當前的日期)
-                const currentDayId = window.location.hash.substring(1) || dayIds[0];
-                switchDayContent(currentDayId.startsWith('day-') ? currentDayId : dayIds[0]);
-                dayTabsContainer.style.display = 'flex'; // 顯示日期 Tab
-            }
-            
-            // 更新底部導覽列的 active 狀態
-            mainTabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // 底部 Tab 只關注三大分類: 行程, 資訊, 記帳
-            const mainTabId = targetId.startsWith('day-') ? 'itinerary' : targetId;
-            const activeMainTab = document.getElementById(`tab-${mainTabId}`);
-            if (activeMainTab) {
-                 activeMainTab.classList.add('active');
-            }
-        }
-        
-        // ----------------------------------------------------
-        // IV. 頁面載入時執行
-        // ----------------------------------------------------
-        
-        // 1. 建立頂部日期 Tab
-        buildDayTabs();
-        
-        // 2. 監聽底部 Tab Bar 點擊事件
-        mainTabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = tab.getAttribute('href').substring(1); // 取得 id
-                switchMainTab(targetId === '#day-12-27' ? 'itinerary' : targetId); // 行程頁面統一使用 'itinerary' 模式
-                
-                // 行程 Tab 點擊時，回到當前日期或第一天
-                if (targetId === '#day-12-27') { 
-                    const currentDayId = window.location.hash.substring(1).startsWith('day-') ? window.location.hash.substring(1) : dayIds[0];
-                    window.location.hash = currentDayId;
-                } else {
-                    window.location.hash = targetId; // 資訊/記帳 Tab 直接設定 Hash
-                }
-            });
-        });
+            // 顯示攻略頁面
+            const guideSection = document.getElementById(guideId);
+            if (guideSection) {
+                guideSection.classList.remove('hidden');
+                guideSection.classList.add('active-page');
+            }
+            
+            dayTabsContainer.style.display = 'none'; // 隱藏日期 Tab
+            
+            // 更新 URL hash
+            if (history.pushState) {
+                history.pushState(null, null, `#${guideId}`);
+            }
+            
+            // 儲存返回 ID，供返回按鈕使用
+            guideSection.setAttribute('data-back-to', backDayId); 
+            
+            // 底部 Tab 恢復到 行程 狀態
+            mainTabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById('tab-itinerary').classList.add('active');
+        }
 
-        // 3. 初始化：檢查 URL Hash 或預設顯示第一個行程
-        const initialHash = window.location.hash.substring(1);
-        
-        if (initialHash && document.getElementById(initialHash)) {
-            switchMainTab(initialHash);
-        } else {
-            // 預設顯示第一個行程 section
-            switchMainTab(dayIds[0]);
-        }
-        
-        // 4. 監聽 Hash 改變事件 (處理瀏覽器回退)
-        window.addEventListener('hashchange', () => {
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                 switchMainTab(hash);
-            }
-        });
 
-        // 5. 導航按鈕 (保持原有功能)
-        document.querySelectorAll('.nav-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const location = button.getAttribute('data-location');
-                if (location) {
-                    window.open(`https://www.google.com/search?q=http://maps.google.com/%3Fq%3D${encodeURIComponent(location)}`, '_blank');
-                }
-            });
-        });
+        // ----------------------------------------------------
+        // IV. 切換主要頁面 (底部 Tab)
+        // ----------------------------------------------------
+        
+        function switchMainTab(targetId) {
+            // 隱藏所有區塊 (日期、攻略、工具)
+            [...daySections, ...guideSections, ...toolSections].forEach(section => {
+                section.classList.remove('active-page');
+                section.classList.add('hidden');
+            });
+            
+            // 判斷要顯示哪個區塊
+            if (targetId === 'info' || targetId === 'budget') {
+                // 顯示工具區塊
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                    targetSection.classList.add('active-page');
+                }
+                dayTabsContainer.style.display = 'none'; // 隱藏日期 Tab
+            } else { 
+                // 顯示行程區塊 (預設跳轉到當前的日期)
+                const currentDayId = targetId.startsWith('day-') ? targetId : dayIds[0];
+                switchDayContent(currentDayId);
+                dayTabsContainer.style.display = 'flex'; // 顯示日期 Tab
+            }
+            
+            // 更新底部導覽列的 active 狀態
+            mainTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            const mainTabId = targetId.startsWith('day-') || targetId.includes('guide') ? 'itinerary' : targetId;
+            const activeMainTab = document.getElementById(`tab-${mainTabId}`);
+            if (activeMainTab) {
+                activeMainTab.classList.add('active');
+            }
+        }
+        
+        // ----------------------------------------------------
+        // V. 頁面載入時執行 / 按鈕事件監聽
+        // ----------------------------------------------------
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 1. 建立頂部日期 Tab
+            buildDayTabs();
+            
+            // 2. 監聽底部 Tab Bar 點擊事件 (保持原有邏輯)
+            mainTabs.forEach(tab => {
+                tab.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = tab.getAttribute('href').substring(1); 
+                    switchMainTab(targetId); 
+                    window.location.hash = targetId; 
+                });
+            });
 
-    </script>
+            // 3. 初始化：檢查 URL Hash 或預設顯示第一個行程
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && document.getElementById(initialHash)) {
+                if (initialHash.startsWith('day-') || initialHash === 'info' || initialHash === 'budget' || initialHash.endsWith('-guide')) {
+                    // 如果是日期、工具或攻略頁面，則直接切換顯示
+                    if (initialHash.startsWith('day-')) {
+                        switchDayContent(initialHash);
+                        dayTabsContainer.style.display = 'flex';
+                        switchMainTab('day-12-27'); // 確保底部 Tab 狀態正確
+                    } else if (initialHash.endsWith('-guide')) {
+                        // 如果是攻略頁面，則需要特殊處理顯示
+                         document.getElementById(initialHash).classList.remove('hidden');
+                         document.getElementById(initialHash).classList.add('active-page');
+                         dayTabsContainer.style.display = 'none';
+                         switchMainTab('day-12-27'); // 確保底部 Tab 狀態正確
+                    } else {
+                         switchMainTab(initialHash);
+                    }
+                }
+            } else {
+                // 預設顯示第一個行程 section
+                switchMainTab(dayIds[0]);
+            }
+            
+            // 4. 監聽 Hash 改變事件 (處理瀏覽器回退)
+            window.addEventListener('hashchange', () => {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    switchMainTab(hash);
+                }
+            });
+
+            // 5. 導航按鈕 (保持原有功能)
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const location = button.getAttribute('data-location');
+                    if (location) {
+                        window.open(`http://maps.google.com/?q=${encodeURIComponent(location)}`, '_blank');
+                    }
+                });
+            });
+
+            // 6. 新增：成田機場攻略按鈕邏輯
+            const naritaButton = document.getElementById('narita-guide-button');
+            const naritaBackButton = document.getElementById('back-to-12-27');
+            
+            if (naritaButton) {
+                naritaButton.addEventListener('click', () => {
+                    // 切換到攻略頁面，並告知返回時要回 12/27
+                    switchGuidePage('narita-guide', 'day-12-27');
+                });
+            }
+            
+            if (naritaBackButton) {
+                naritaBackButton.addEventListener('click', () => {
+                    // 返回按鈕點擊後，切換回指定的日期行程
+                    const backToId = naritaBackButton.parentNode.getAttribute('data-back-to') || 'day-12-27';
+                    switchDayContent(backToId);
+                    dayTabsContainer.style.display = 'flex'; // 顯示日期 Tab
+                    if (history.pushState) {
+                        history.pushState(null, null, `#${backToId}`);
+                    }
+                });
+            }
+
+            // 7. DOM 載入後執行天氣查詢
+            await loadAllWeather(); 
+        });
+
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
