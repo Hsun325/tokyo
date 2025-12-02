@@ -1,314 +1,338 @@
 /* 設置 CSS 變數，方便統一主題色 */
 :root {
-    --primary-color: #a88d71; /* 常用於按鈕和高亮 (深米色/棕色) */
-    --background-light: #CACFE4; /* 用戶指定的淺藍灰背景 */
-    --card-background: #ffffff; /* 卡片白色背景 */
-    --text-primary: #111111; /* 主要深色文字 */
-    --text-secondary: #555555; /* 次要淺色文字 */
-    --border-radius-lg: 16px; /* 大圓角 */
-    --color-red-hot: #FF5C5C; /* 新增: 截圖中的活躍 Tab 顏色 */
+    --primary-color: #a88d71; /* 常用於按鈕和高亮 (深米色/棕色) */
+    --background-light: #CACFE4; /* 用戶指定的淺藍灰背景 */
+    --card-background: #ffffff; /* 卡片白色背景 */
+    --text-primary: #111111; /* 主要深色文字 */
+    --text-secondary: #555555; /* 次要淺色文字 */
+    --border-radius-lg: 16px; /* 大圓角 */
+    --color-red-hot: #FF5C5C; /* 新增: 截圖中的活躍 Tab 顏色 */
 
-    /* 記帳分類顏色 */
-    --color-food: #FF7043;    /* 餐飲: 橘色 */
-    --color-traffic: #42A5F5; /* 交通: 藍色 */
-    --color-shopping: #8D6E63;/* 購物: 棕色 */
-    --color-other: #7E57C2;   /* 其他: 紫色 */
+    /* 記帳分類顏色 */
+    --color-food: #FF7043;    /* 餐飲: 橘色 */
+    --color-traffic: #42A5F5; /* 交通: 藍色 */
+    --color-shopping: #8D6E63;/* 購物: 棕色 */
+    --color-other: #7E57C2;   /* 其他: 紫色 */
 }
 
 /* 基礎重設 */
 body {
-    margin: 0;
-    font-family: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif; 
-    background-color: var(--background-light); 
-    color: var(--text-primary);
-    line-height: 1.5;
-    padding-bottom: 70px; /* 為底部導覽列保留空間 */
+    margin: 0;
+    font-family: 'Noto Sans TC', 'Helvetica Neue', Arial, sans-serif; 
+    background-color: var(--background-light); 
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding-bottom: 70px; /* 為底部導覽列保留空間 */
 }
 
 /* App Header 頂部 */
 .app-header {
-    background-color: var(--card-background);
-    padding: 20px 20px 15px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08); 
-    text-align: center; 
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    background-color: var(--card-background);
+    padding: 20px 20px 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); 
+    text-align: center; 
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 .app-header h1 {
-    font-size: 1.2em; 
-    font-weight: 700; 
-    margin: 0;
+    font-size: 1.2em; 
+    font-weight: 700; 
+    margin: 0;
 }
 
 /* -------------------------------------- */
 /* 頂部日期滾動欄 (Day Scroll Nav) */
 /* -------------------------------------- */
 .day-scroll-nav {
-    display: flex;
-    overflow-x: scroll;
-    padding: 10px 10px; /* 內距 */
-    gap: 8px; /* Tab 間距 */
-    background-color: var(--card-background);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    position: sticky; /* 固定在 Header 下方 */
-    top: 60px; /* 假設 Header 高度約 60px */
-    z-index: 9;
-    /* 隱藏滾動條 */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px 10px; /* 內距 */
+    gap: 8px; /* Tab 間距 */
+    background-color: var(--card-background);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    position: sticky; /* 固定在 Header 下方 */
+    top: 60px; /* 假設 Header 高度約 60px */
+    z-index: 9;
+    /* 隱藏滾動條 */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 .day-scroll-nav::-webkit-scrollbar {
-    display: none;
+    display: none;
 }
 
 /* 日期 Tab 圓角按鈕 */
 .day-scroll-nav a {
-    flex-shrink: 0; /* 阻止 Tab 被擠壓 */
-    padding: 8px 15px;
-    border-radius: 20px; /* 圓角膠囊形狀 */
-    text-decoration: none;
-    font-size: 0.9em;
-    font-weight: 600;
-    color: var(--text-secondary);
-    background-color: #f0f0f0;
-    transition: all 0.2s;
-    min-width: 55px;
-    text-align: center;
+    flex-shrink: 0; /* 阻止 Tab 被擠壓 */
+    padding: 8px 15px;
+    border-radius: 20px; /* 圓角膠囊形狀 */
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background-color: #f0f0f0;
+    transition: all 0.2s;
+    min-width: 55px;
+    text-align: center;
 }
 .day-scroll-nav a.active {
-    background-color: var(--color-red-hot); /* 活躍 Tab 顏色 */
-    color: white;
-    box-shadow: 0 2px 4px rgba(255, 92, 92, 0.4);
+    background-color: var(--color-red-hot); /* 活躍 Tab 顏色 */
+    color: white;
+    box-shadow: 0 2px 4px rgba(255, 92, 92, 0.4);
 }
 
 /* 主內容容器 */
 .content-container {
-    width: 100%; 
+    width: 100%; 
 }
 
 /* 獨立行程頁面樣式 */
 .itinerary-day, .tool-section {
-    padding: 0 10px; /* 讓卡片左右頂到邊緣 */
-    box-sizing: border-box;
+    padding: 0 10px; /* 讓卡片左右頂到邊緣 */
+    box-sizing: border-box;
 }
 
 /* --- 卡片與圖片樣式 --- */
 
 /* 行程卡片與工具區塊 */
 .day-card, .tool-section {
-    background-color: var(--card-background);
-    border-radius: var(--border-radius-lg); 
-    margin: 10px auto; 
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
-    width: auto; 
-    max-width: 600px; 
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-lg); 
+    margin: 10px auto; 
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); 
+    width: auto; 
+    max-width: 600px; 
 }
 
 /* 頂部圖片卡片 (Current Vibe Card) */
 .current-vibe-card {
-    padding: 0; /* 移除內邊距 */
-    margin: 10px auto; 
-    overflow: hidden;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0; /* 移除內邊距 */
+    margin: 10px auto; 
+    overflow: hidden;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .current-vibe-card p {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6); 
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6); 
 }
 .current-vibe-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%); 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%); 
 }
 
 /* 行程內容卡片 - 標題和列表 */
 .day-card h2 {
-    font-size: 1.2em;
-    font-weight: 600; 
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: var(--primary-color);
+    font-size: 1.2em;
+    font-weight: 600; 
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-color);
 }
 .weather-info {
-    font-size: 0.9em;
-    color: var(--text-secondary);
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eeeeee;
+    font-size: 0.9em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
 }
 .day-card ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 .day-card ul li {
-    padding: 5px 0 5px 20px;
-    position: relative;
+    padding: 5px 0 5px 20px;
+    position: relative;
 }
 .day-card ul li::before {
-    content: '•'; /* 使用自定義點點 */
-    color: var(--primary-color);
-    font-size: 1.2em;
-    position: absolute;
-    left: 0;
-    top: 6px;
+    content: '•'; /* 使用自定義點點 */
+    color: var(--primary-color);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 6px;
 }
 .day-card strong {
-    font-weight: 700;
+    font-weight: 700;
 }
 
 /* 導航按鈕 */
 .nav-button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 12px; 
-    padding: 12px 15px;
-    margin-top: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    display: block; 
-    width: 100%;
-    transition: background-color 0.2s;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px; 
+    padding: 12px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: block; 
+    width: 100%;
+    transition: background-color 0.2s;
 }
 .nav-button:active {
-    background-color: #007bb5;
+    background-color: #007bb5;
 }
 
 /* -------------------------------------- */
 /* 底部固定 Tab Bar (Main Tab Bar) */
 /* -------------------------------------- */
 #main-tab-bar { /* 使用 ID 鎖定底部 Tab */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-around; /* 平均分佈三個 Tab */
-    align-items: center;
-    height: 70px;
-    background-color: var(--card-background);
-    border-top: 1px solid #e0e0e0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-    z-index: 100;
-    overflow-x: hidden;
-    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around; /* 平均分佈三個 Tab */
+    align-items: center;
+    height: 70px;
+    background-color: var(--card-background);
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    z-index: 100;
+    overflow-x: hidden;
+    padding: 0;
 }
 #main-tab-bar a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: 10px 15px;
-    font-weight: 600;
-    transition: color 0.2s;
-    font-size: 0.9em;
-    flex-grow: 1; 
-    text-align: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    transition: color 0.2s;
+    font-size: 0.9em;
+    flex-grow: 1; 
+    text-align: center;
 }
 #main-tab-bar a.active {
-    color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* 隱藏未選中的內容分頁 */
 .hidden {
-    display: none !important;
+    display: none !important;
 }
 
 /* --- 記帳功能樣式 --- */
 .input-form {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    flex-wrap: wrap; 
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; 
 }
 .input-form input, .input-form select {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    flex-grow: 1;
-    font-size: 1em;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    flex-grow: 1;
+    font-size: 1em;
 }
 #expense-item {
-    flex-basis: 100%;
+    flex-basis: 100%;
 }
 #expense-amount, #expense-category {
-    flex-basis: calc(50% - 5px);
+    flex-basis: calc(50% - 5px);
 }
 
 #add-expense-btn {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
 }
 #expense-list {
-    list-style: none;
-    padding: 0;
+    list-style: none;
+    padding: 0;
 }
 #expense-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1em;
 }
 #expense-list li small {
-    font-size: 0.8em;
-    padding: 3px 6px;
-    border-radius: 4px;
-    color: white;
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 4px;
+    color: white;
 }
 
 /* 記帳清單分類顏色 */
 #expense-list li.category-food small {
-    background-color: var(--color-food);
+    background-color: var(--color-food);
 }
 #expense-list li.category-traffic small {
-    background-color: var(--color-traffic);
+    background-color: var(--color-traffic);
 }
 #expense-list li.category-shopping small {
-    background-color: var(--color-shopping);
+    background-color: var(--color-shopping);
 }
 #expense-list li.category-other small {
-    background-color: var(--color-other);
+    background-color: var(--color-other);
 }
 
 #expense-list li button {
-    background: #FF5C5C;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 8px;
-    font-size: 0.8em;
-    cursor: pointer;
+    background: #FF5C5C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    cursor: pointer;
 }
 #export-csv-btn {
-    margin-top: 20px;
-    background: #555555;
-    color: white;
+    margin-top: 20px;
+    background: #555555;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* --- 新增：將行程中的按鈕轉換為彩色連結樣式 (淡咖啡色) --- */
+
+.action-link {
+    /* 移除所有按鈕預設樣式 */
+    background: none;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
-    width: 100%;
-    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    
+    /* 連結文字樣式 */
+    display: inline-block;
+    color: var(--primary-color); /* **使用淡咖啡色 (primary-color)** */
+    text-decoration: none; /* 移除預設的下劃線 */
+    cursor: pointer; /* 顯示手型指標，表示可點擊 */
+    font-weight: bold; /* 加粗字體以突顯 */
+    
+    transition: color 0.1s ease; /* 增加過渡效果 */
+}
+
+.action-link:hover {
+    color: #8C7560; /* 懸停時顏色略深一點 (原色變暗) */
+    text-decoration: underline; /* 懸停時加上下劃線，更像連結 */
 }
