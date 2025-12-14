@@ -19,6 +19,7 @@ const urlsToCache = [
     '/image/fuji.jpg',
     '/image/kamakura.jpg',
     '/image/ueno.jpg',
+    '/image/takashita.jpg',
     '/image/home.jpg'
 ];
 
@@ -80,6 +81,7 @@ self.addEventListener('fetch', event => {
             })
     );
 });
+
 
 
 
